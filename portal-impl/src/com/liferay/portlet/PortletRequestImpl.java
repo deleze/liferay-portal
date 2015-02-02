@@ -30,6 +30,7 @@ import com.liferay.portal.kernel.util.ArrayUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.ContextPathUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
+import com.liferay.portal.kernel.util.HttpUtil;
 import com.liferay.portal.kernel.util.JavaConstants;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
@@ -795,6 +796,9 @@ public abstract class PortletRequestImpl implements LiferayPortletRequest {
 				String[] values = entry.getValue();
 
 				if (themeDisplay.isLifecycleRender()) {
+					for (int i = 0; i < values.length; i++) {
+						values[i] = HttpUtil.decodeURL(values[i]);
+					}
 					renderParameters.put(name, values);
 				}
 
