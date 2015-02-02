@@ -3,8 +3,13 @@
 <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.1">
 	<deployment>
 		<exclusions>
+			<module name="javaee.api" />
+			<module name="org.hibernate" />
 			<module name="org.apache.log4j" />
 			<module name="org.hibernate" />
+			<module name="org.hibernate.validator" />
+			<module name="org.javassist" />
+			<module name="org.jboss.as.jpa" />
 		</exclusions>
 		<dependencies>
 			<module meta-inf="export" name="com.liferay.portal">
