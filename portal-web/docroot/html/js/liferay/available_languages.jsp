@@ -18,11 +18,10 @@
 <%@ page import="com.liferay.portal.kernel.servlet.HttpHeaders" %>
 <%@ page import="com.liferay.portal.kernel.util.ContentTypes" %>
 <%@ page import="com.liferay.portal.kernel.util.LocaleUtil" %>
-
+<%@ page language="java" contentType="text/javascript;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.Locale" %>
 
 <%
-response.addHeader(HttpHeaders.CONTENT_TYPE, ContentTypes.TEXT_JAVASCRIPT);
 
 String languageId = LanguageUtil.getLanguageId(request);
 
